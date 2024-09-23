@@ -4,8 +4,8 @@ const previous = document.querySelector('.prev-guess');
 const remaining = document.querySelector('.remain-guess');
 let userInput = document.querySelector('#putNum');
 let loworHi = document.querySelector('.loworHi');
-const p = document.createElement('p ');
-
+const result = document.querySelector('.result-label')
+const btnn = document.querySelector('#butn');
 let playGame = true;
 let numLeft = 1;
 let prevguess = [];
@@ -56,4 +56,23 @@ function remainingGuess(game) {
 function displayMsg(message) {
   loworHi.innerHTML = `<h2> ${message} </h2>`;
 }
-function endGame() {}
+function endGame() {
+    userInput.value = '';
+    userInput.setAttribute('disabled' , '')
+    playGame = false;
+    newGame();
+}
+
+function newGame(){
+  btnn.addEventListener('click', function (e){
+    logic = parseInt(Math.random() * 100 + 1);
+    userInput.value = '';
+    userInput.removeAttribute('disabled')
+    prevguess = [];
+    numLeft = 1;
+    previous.innerHTML = '';
+    remaining.innerHTML = `${11 - numLeft}`;
+    playGame = true;
+
+  })
+}

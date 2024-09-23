@@ -55,6 +55,8 @@ main .heading {
 main label {
   width: 100%;
   margin-top: 0px;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 main {
@@ -94,4 +96,9 @@ form {
 .loworHi {
   background-color: #000;
   color: #eee;
+}
+#butn{
+  align-items: center;
+  margin-left: 20px;
+  border-radius: 10px;
 }
